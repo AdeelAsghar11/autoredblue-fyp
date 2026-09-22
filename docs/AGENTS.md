@@ -1,4 +1,4 @@
-# AGENTS.md — AutoRedBlue
+# AGENTS.md: AutoRedBlue
 
 Read `docs/PROJECT.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `docs/PROGRESS.md`, `docs/RESEARCH.md`, and `docs/ROADMAP.md` before making any change in this repo. They are the actual source of truth: architecture, every design decision and why it was made, current status, verified research backing the approach, and the full dependency-ordered build plan. This file is a pointer and a set of hard boundaries, not a replacement, nothing here overrides what's in those six.
 
