@@ -41,10 +41,7 @@ Both machines stay on a single Ollama-served open-weight model; 30B+ models aren
 
 ## Team
 
-Two BS Artificial Intelligence students, COMSATS University Islamabad, Wah Campus, supervised by Dr Saeed Ur Rehman.
-
-- **Adeel**: Scan, Triage, Report, and Verification Agents; all graph/orchestration engineering (retry loops, the approval interrupt, checkpointing).
-- **Asad**: Recon Agent; the Dashboard (UI module); documentation (SRDS, diagrams, FYP report).
+Adeel Asghar, Asad Mashood, supervised by Dr Saeed Ur Rehman.
 
 ## Current status
 
