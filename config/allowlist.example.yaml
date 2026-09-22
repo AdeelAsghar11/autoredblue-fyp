@@ -1,0 +1,20 @@
+# Scope allow-list: copy this file to allowlist.yaml and populate before
+# any run. agents/scope_check.py refuses to proceed unless `target` exactly
+# matches an entry here (see ARCHITECTURE.md "0. Scope Allow-list Check").
+#
+# PROJECT.md scope guardrails: local, intentionally-vulnerable targets only
+# (DVWA, OWASP Juice Shop, Metasploitable). Never a live .gov.pk site or any
+# other production host, this project has no signed authorisation for one.
+
+allowed_targets:
+  - host: "localhost"
+    port: 8080
+    description: "DVWA (docker-compose service 'dvwa')"
+
+  - host: "localhost"
+    port: 3000
+    description: "OWASP Juice Shop (docker-compose service 'juice-shop')"
+
+  - host: "localhost"
+    port: 8081
+    description: "Metasploitable2 (docker-compose service 'metasploitable')"

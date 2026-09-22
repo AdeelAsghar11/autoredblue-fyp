@@ -1,0 +1,29 @@
+# Local, intentionally-vulnerable targets only, see docs/PROJECT.md
+# "Scope guardrails". Never point any agent at a live target.
+#
+# Usage: docker compose up -d
+# Ports mirror config/allowlist.example.yaml, keep the two in sync.
+
+services:
+  dvwa:
+    image: vulnerables/web-dvwa
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  juice-shop:
+    image: bkimminich/juice-shop
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  metasploitable:
+    # Community image: Metasploitable is normally distributed as a VM, not
+    # a Docker image, because its vulnerabilities span OS-level services,
+    # not just a web app. Confirm this image still meets the project's
+    # needs at implementation time (see docs/PROGRESS.md "Next concrete
+    # task", step 2).
+    image: citizenstig/metasploitable2
+    ports:
+      - "8081:80"
+    restart: unless-stopped

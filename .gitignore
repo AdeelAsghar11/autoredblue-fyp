@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Env vars (real, never the .example template)
+.env
+
+# ChromaDB local persistence
+chroma_data/
+
+# Real, populated config (copied from the .example templates, never the
+# actual scope allow-list or machine settings)
+config/allowlist.yaml
+config/settings.yaml
+
+# Test / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# OS
+.DS_Store
+Thumbs.db

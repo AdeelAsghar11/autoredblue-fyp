@@ -1,0 +1,20 @@
+# App settings: copy this file to settings.yaml and adjust for the
+# machine you're running on. See ARCHITECTURE.md "Model choice" and
+# "Hardware: two machines, two roles" for why vram_tier matters.
+
+ollama:
+  host: "http://localhost:11434"
+  # Dev-machine default (GTX 1660 Super, 6GB VRAM). On the lab PC
+  # (RTX A4000, 16GB VRAM) move up within the same 7B-14B tier, see
+  # ARCHITECTURE.md, do not jump to a 30B+ model.
+  model: "qwen2.5-coder:7b"
+
+# One of: "dev" (personal PC, 3B-7B) or "lab" (A4000, 7B-14B).
+vram_tier: "dev"
+
+chroma:
+  persist_dir: "./chroma_data"
+
+dashboard:
+  host: "127.0.0.1"
+  port: 8000

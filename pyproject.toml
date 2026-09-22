@@ -1,0 +1,27 @@
+[project]
+name = "autoredblue"
+version = "0.1.0"
+description = "Local multi-agent AI system for web application security audits."
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph",
+    "fastapi",
+    "uvicorn",
+    "chromadb",
+    "ollama",
+    "playwright",
+    "pywebview",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
