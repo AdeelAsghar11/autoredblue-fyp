@@ -32,9 +32,10 @@ A local-only, small-model (7B–14B) security-audit pipeline whose architecture 
 Proposal approved by supervisor. Architecture finalised and refined across three sessions (initial design, research verification, graph-engineering + hardware clarification). FYP-I build not yet started.
 
 ## Files in this project
-Five files, each with one job. Read PROJECT.md first in any new session; read the others only as needed.
+Six files, each with one job. Read PROJECT.md first in any new session; read the others only as needed.
 - **PROJECT.md** (this file): overview, scope guardrails, team. Rarely changes.
 - **ARCHITECTURE.md**: the current technical design. Update when a design decision changes.
 - **DECISIONS.md**: append-only dated log of what was decided and why. Never rewritten, only added to.
 - **PROGRESS.md**: current status, next concrete task, open risks. Updates almost every session.
 - **RESEARCH.md**: external research findings and their verification status. Append new findings as dated entries.
+- **ROADMAP.md**: the full, dependency-ordered build plan, FYP-I and FYP-II. Work it top to bottom; check a box only once its Test line passes.

@@ -1,6 +1,6 @@
-# AGENTS.md — AutoRedBlue
+# AGENTS.md: AutoRedBlue
 
-Read `docs/PROJECT.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `docs/PROGRESS.md`, and `docs/RESEARCH.md` before making any change in this repo. They are the actual source of truth: architecture, every design decision and why it was made, current status, and verified research backing the approach. This file is a pointer and a set of hard boundaries, not a replacement, nothing here overrides what's in those five.
+Read `docs/PROJECT.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `docs/PROGRESS.md`, `docs/RESEARCH.md`, and `docs/ROADMAP.md` before making any change in this repo. They are the actual source of truth: architecture, every design decision and why it was made, current status, verified research backing the approach, and the full dependency-ordered build plan. This file is a pointer and a set of hard boundaries, not a replacement, nothing here overrides what's in those six.
 
 ## Non-negotiable boundaries
 These exist because they're easy to violate by accident while coding, not because they're likely to be violated on purpose.
@@ -10,7 +10,7 @@ These exist because they're easy to violate by accident while coding, not becaus
 - Valid test targets right now: DVWA, OWASP Juice Shop, Metasploitable. No other host, local or remote, until a signed authorisation exists, which it currently does not.
 
 ## Working agreements
-- Follow PROGRESS.md's "Next concrete task" order. Don't jump to building all five agents before the thin end-to-end slice (Recon → one scan type → basic report, retry loop and approval interrupt included from the start) is proven.
+- Work through `ROADMAP.md` in order, top to bottom. Check a box only after its Test line actually passes, then commit and push before moving to the next step. Don't skip ahead, the order there is dependency-safe on purpose.
 - Log any real design decision in `docs/DECISIONS.md` as you make it: dated, one line, with the one-sentence reason. This has already drifted out of sync with what was actually built once on this project and cost a cleanup pass to fix, don't let it happen again.
 - Team ownership (see PROJECT.md for the reasoning): Adeel owns Scan, Triage, Report, Verification, and the graph/orchestration layer. Asad owns Recon, the Dashboard, and documentation.
 - No OS install is required to start. Ollama, Docker, Nmap, OWASP ZAP, sqlmap, Playwright, and the Python stack all run natively on Windows. Only Nikto is genuinely annoying there, use WSL2 for it specifically, not before.
