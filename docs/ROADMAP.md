@@ -18,7 +18,7 @@
 - [x] **0.1 Install the base stack.** Build: Python, LangGraph, FastAPI, ChromaDB, Ollama, Docker installed on the personal PC. No OS install needed first, see `PROGRESS.md`. Test: `ollama run` responds to a basic prompt; `docker run hello-world` succeeds. Commit: `chore: base environment setup`.
 - [x] **0.2 Pull a dev-scale model.** Build: pull a 3B–7B model sized to the 1660 Super's 6GB VRAM. Test: model answers a basic tool-calling-style prompt without erroring. Commit: `chore: pull dev model`.
 - [x] **0.3 Bring up DVWA.** Build: `docker-compose up` for DVWA per the scaffold's `docker-compose.yml`. Test: DVWA's login page loads in a browser at its local port. Commit: `chore: DVWA target running`. **[parallel-safe]**
-- [ ] **0.4 Manually run Nmap and ZAP against DVWA.** Build: nothing, no agent code yet. Run both tools by hand from a terminal. Test: you have real Nmap and ZAP output saved as sample files, you personally understand what each looks like. Commit: `docs: sample tool output for reference` (commit the saved output under `tests/fixtures/`). (whoever hasn't used these tools before; this is the literacy step from `PROGRESS.md`)
+- [x] **0.4 Manually run Nmap and ZAP against DVWA.** Build: nothing, no agent code yet. Run both tools by hand from a terminal. Test: you have real Nmap and ZAP output saved as sample files, you personally understand what each looks like. Commit: `docs: sample tool output for reference` (commit the saved output under `tests/fixtures/`). (whoever hasn't used these tools before; this is the literacy step from `PROGRESS.md`)
 
 ### 1. Scope Allow-list Check (module 0)
 No LLM, no graph, pure code, zero dependencies on anything else in this list. Genuinely the safest possible first real code.

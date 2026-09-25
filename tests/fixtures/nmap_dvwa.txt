@@ -1,0 +1,26 @@
+# Nmap 7.80 scan initiated Sat Sep 26 02:24:01 2026 as: "C:\\Program Files (x86)\\Nmap\\nmap.exe" -sV -p 8080 --script=http-title,http-headers -oX E:/fyp/tests/fixtures/nmap_dvwa.xml -oN E:/fyp/tests/fixtures/nmap_dvwa.txt localhost
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00s latency).
+Other addresses for localhost (not scanned): ::1
+
+PORT     STATE SERVICE VERSION
+8080/tcp open  http    Apache httpd 2.4.25 ((Debian))
+| http-headers: 
+|   Date: Fri, 25 Sep 2026 21:24:08 GMT
+|   Server: Apache/2.4.25 (Debian)
+|   Set-Cookie: PHPSESSID=057gp1fimp6inrbmjm8tg3ubf1; path=/
+|   Expires: Tue, 23 Jun 2009 12:00:00 GMT
+|   Cache-Control: no-cache, must-revalidate
+|   Pragma: no-cache
+|   Set-Cookie: PHPSESSID=057gp1fimp6inrbmjm8tg3ubf1; path=/
+|   Set-Cookie: security=low
+|   Connection: close
+|   Content-Type: text/html;charset=utf-8
+|   
+|_  (Request type: HEAD)
+|_http-server-header: Apache/2.4.25 (Debian)
+| http-title: Login :: Damn Vulnerable Web Application (DVWA) v1.10 *Develop...
+|_Requested resource was login.php
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Sep 26 02:24:08 2026 -- 1 IP address (1 host up) scanned in 7.04 seconds
