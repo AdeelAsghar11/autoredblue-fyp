@@ -19,6 +19,14 @@ FYP-I, pre-build. Proposal approved by supervisor (Dr Saeed Ur Rehman). Architec
 
 **The full, granular, dependency-ordered build plan now lives in `ROADMAP.md`.** Check the first unchecked box there and start. This section used to list the first few steps directly; that became a second copy of the same plan the moment `ROADMAP.md` existed, so it's gone from here on purpose, not by accident.
 
+**2026-09-25 environment setup session (dev PC):**
+- `uv venv` created at `.venv` (Python 3.11.15, matches the `>=3.11` pin), `uv pip install -e ".[dev]"` done, `uv.lock` generated. All ROADMAP-0 Python deps (LangGraph, FastAPI, ChromaDB, Ollama client, Playwright, PyWebView, PyYAML, pytest) import cleanly.
+- `.env` and `config/allowlist.yaml` / `config/settings.yaml` created from their `.example` templates (still gitignored, as intended).
+- Ollama service started and confirmed working: `qwen2.5:7b` and `qwen2.5-coder:7b` (the model `.env.example`/`ARCHITECTURE.md` actually specify) both pulled and tested, including a reason-then-tool-call-style prompt. `nvidia-smi` confirms the GTX 1660 Super loads the 7B model at ~4.7GB/6GB VRAM, in line with the ROADMAP's sizing assumption.
+- Known non-blocking gap: Playwright's own `playwright install chromium` browser-binary download times out against `cdn.playwright.dev` from this network. Not needed until step 9.3 (FYP-II); retry later or via a different network.
+
+**2026-09-25 follow-up (same day): Docker unblocked.** The Hyper-V/Virtual Machine Platform fix from earlier in the session (elevated `dism.exe /online /enable-feature`, reboot) took: `wsl -d docker-desktop` now starts cleanly instead of failing with `HCS_E_HYPERV_NOT_INSTALLED`. Started Docker Desktop, waited for the engine, ran `docker run hello-world`: it pulled and ran successfully. ROADMAP 0.1 and 0.2 both fully pass now (Ollama half already confirmed above, Docker half confirmed just now). Boxes checked, committed, pushed.
+
 ## Open risks / watch-items
 - **#1 risk, unchanged:** small-model tool-calling reliability. The plain-text-reason-then-parse decision (with its retry loop) is the mitigation; validate it in the thin slice before committing to it everywhere.
 - **Graph/orchestration engineering is real, distinct scope**, not something LangGraph provides for free: retry loops, conditional routing, the approval-gate interrupt, and the Verification Agent's cross-session resume all need to be explicitly built. See ARCHITECTURE.md's new "Graph & orchestration engineering" section.
