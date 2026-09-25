@@ -36,16 +36,21 @@ def _find_nmap() -> str:
     )
 
 
-def run_nmap(host: str, *args: str) -> str:
-    """Run Nmap against `host` with extra `args` and return raw XML output.
+_OUTPUT_FLAGS = {"xml": "-oX", "normal": "-oN"}
+
+
+def run_nmap(host: str, *args: str, output_format: str = "xml") -> str:
+    """Run Nmap against `host` with extra `args` and return raw output.
 
     `args` are forwarded to Nmap as-is (e.g. "-sV", "-p", "8080"); this
-    function doesn't interpret them, it only forces `-oX -` so the result
-    is always parseable XML on stdout.
+    function doesn't interpret them, it only appends the output flag for
+    `output_format` ("xml", the default, for parse_nmap_xml(); "normal"
+    for the human-readable -oN format the Recon Agent's LLM perceptor
+    was validated against, see ROADMAP step 3.3).
     """
     nmap_bin = _find_nmap()
     result = subprocess.run(
-        [nmap_bin, *args, "-oX", "-", host],
+        [nmap_bin, *args, _OUTPUT_FLAGS[output_format], "-", host],
         capture_output=True,
         text=True,
         check=True,

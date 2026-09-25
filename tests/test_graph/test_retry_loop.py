@@ -1,4 +1,4 @@
-from autoredblue.graph.build_graph import build_reason_then_parse_graph
+from autoredblue.graph.retry_loop import build_reason_then_parse_graph
 from autoredblue.llm.parsing import parse_action
 
 VALID_COMPLETION = '<action><tool>x</tool><args>{"ok": true}</args></action>'
