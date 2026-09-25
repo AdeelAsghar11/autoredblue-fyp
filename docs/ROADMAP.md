@@ -27,7 +27,7 @@ No LLM, no graph, pure code, zero dependencies on anything else in this list. Ge
 
 ### 2. Minimal graph skeleton
 Prove the graph mechanics work with trivial nodes before adding any real complexity on top.
-- [ ] **2.1 Define the state object.** Build: `src/autoredblue/graph/state.py` with just the fields needed so far (`target`, `scope_allowlist`, `approval_state`). See `ARCHITECTURE.md`'s "The state object". Test: state can be constructed and serialized. Commit: `feat: initial graph state schema`.
+- [x] **2.1 Define the state object.** Build: `src/autoredblue/graph/state.py` with just the fields needed so far (`target`, `scope_allowlist`, `approval_state`). See `ARCHITECTURE.md`'s "The state object". Test: state can be constructed and serialized. Commit: `feat: initial graph state schema`.
 - [ ] **2.2 Wire a 2-node graph: scope check → stub recon.** Build: the stub node just logs "recon ran", no real tool call yet. Test: run against an allowed target, both nodes fire in order; run against a disallowed target, the graph stops before the stub node ever runs. Commit: `feat: minimal graph proves scope-gate mechanics`.
 
 ### 3. Real Recon Agent (module 1): the core reliability pattern, proven early on purpose
