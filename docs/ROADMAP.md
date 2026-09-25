@@ -22,7 +22,7 @@
 
 ### 1. Scope Allow-list Check (module 0)
 No LLM, no graph, pure code, zero dependencies on anything else in this list. Genuinely the safest possible first real code.
-- [ ] **1.1 Define the allow-list format.** Build: finalize `config/allowlist.example.yaml`'s schema. Test: a human can read it and know exactly what's in/out of scope. Commit: `feat: allowlist schema`.
+- [x] **1.1 Define the allow-list format.** Build: finalize `config/allowlist.example.yaml`'s schema. Test: a human can read it and know exactly what's in/out of scope. Commit: `feat: allowlist schema`.
 - [ ] **1.2 Implement the check.** Build: `src/autoredblue/agents/scope_check.py`, given a target string, return allowed/refused. Test: an allowed target passes; a target not on the list is refused; an empty or malformed allowlist file fails closed (refuses), not open. Commit: `feat: scope allow-list check`.
 
 ### 2. Minimal graph skeleton
