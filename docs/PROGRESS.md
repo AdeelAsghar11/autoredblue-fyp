@@ -27,6 +27,8 @@ FYP-I, pre-build. Proposal approved by supervisor (Dr Saeed Ur Rehman). Architec
 
 **2026-09-25 follow-up (same day): Docker unblocked.** The Hyper-V/Virtual Machine Platform fix from earlier in the session (elevated `dism.exe /online /enable-feature`, reboot) took: `wsl -d docker-desktop` now starts cleanly instead of failing with `HCS_E_HYPERV_NOT_INSTALLED`. Started Docker Desktop, waited for the engine, ran `docker run hello-world`: it pulled and ran successfully. ROADMAP 0.1 and 0.2 both fully pass now (Ollama half already confirmed above, Docker half confirmed just now). Boxes checked, committed, pushed.
 
+**2026-09-25, same session: ROADMAP 0.3 done.** `docker compose up -d dvwa` brings up `vulnerables/web-dvwa`, confirmed listening on `localhost:8080` with the real DVWA login page (`<title>Login :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*</title>`). Box checked, committed, pushed. Next up: 0.4 (manually run Nmap and ZAP against DVWA by hand, save sample output, tool-literacy step) then module 1 (allow-list check).
+
 ## Open risks / watch-items
 - **#1 risk, unchanged:** small-model tool-calling reliability. The plain-text-reason-then-parse decision (with its retry loop) is the mitigation; validate it in the thin slice before committing to it everywhere.
 - **Graph/orchestration engineering is real, distinct scope**, not something LangGraph provides for free: retry loops, conditional routing, the approval-gate interrupt, and the Verification Agent's cross-session resume all need to be explicitly built. See ARCHITECTURE.md's new "Graph & orchestration engineering" section.
