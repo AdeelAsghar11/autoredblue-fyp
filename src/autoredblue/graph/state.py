@@ -34,5 +34,12 @@ class AuditState(TypedDict):
     approval_state: NotRequired[bool]
     verification_results: NotRequired[list[dict[str, Any]]]
 
-    # TODO: retry/error-tracking fields for the parse-failure retry loop
-    # (docs/ARCHITECTURE.md "Graph & orchestration engineering", pattern 1).
+    # Generic fields for the reason-then-parse retry loop (ROADMAP step
+    # 3.4, ARCHITECTURE.md "Graph & orchestration engineering" pattern 1).
+    # Not recon-specific: any future reason-then-parse node (e.g. the
+    # Scan Agent's tool-selection loop) reuses the same fields.
+    llm_completion: NotRequired[str]
+    llm_error: NotRequired[str | None]
+    llm_attempts: NotRequired[int]
+    llm_result: NotRequired[dict[str, Any]]
+    llm_failed: NotRequired[bool]
